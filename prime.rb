@@ -21,18 +21,16 @@ class Fixnum
         num = self
         divisor = 2
         
-        #do this while the last number is still not a prime
-        while !num.prime?
-        	# when testing primes, it starts with two and goes up from there
-            while num % divisor == 0 and !num.prime?
+       # beause of division, num will be 1 when all primes are found
+        while num != 1
+            # keeps dividing by this prime as long as it can
+            while num % divisor == 0
                 primes << divisor
                 num = num / divisor
             end
             # when it can't divide by that prime anymore, it finds the next one
             divisor = divisor.nextPrime
         end
-        
-        primes << num
+        primes
     end
-    
 end
