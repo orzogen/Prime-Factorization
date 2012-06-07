@@ -1,6 +1,6 @@
 class Fixnum
     
-    #Returns weather the number is a prime
+    #Returns whether the number is a prime
     def prime?
         ('1' * self) !~ /^1?$|^(11+?)\1+$/
     end
